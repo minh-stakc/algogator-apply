@@ -1,6 +1,7 @@
+import os
 import cdsapi
 url="https://cds.climate.copernicus.eu/api"
-key="123456789abcdefghj"
+key=os.environ.get("CDS_API_KEY", "")
 c = cdsapi.Client(url, key)
 
 c.retrieve(
